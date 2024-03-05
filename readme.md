@@ -38,7 +38,7 @@ The backend server handles requests to the weather API and serves the fetched da
    npm start
    ```
 
-   The backend server will start, and you should see a message indicating it is running and listening for requests on a specific port (e.g., `Server listening on port 3000`).
+   The backend server will start, and you should see a message indicating it is running and listening for requests on a specific port (e.g., `Server listening on port 8080`).
 
 ### Setting Up the Frontend
 
@@ -68,7 +68,7 @@ The frontend provides the interface for users to interact with the application. 
    npm run dev
    ```
 
-   This command will compile the frontend and serve it, usually on `http://localhost:3000`. Open your web browser to this address to interact with the application.
+   This command will compile the frontend and serve it, usually on `http://localhost:5173`. Open your web browser to this address to interact with the application.
 
 ## Usage
 
