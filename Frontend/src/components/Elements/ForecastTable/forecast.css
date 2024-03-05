@@ -2,7 +2,6 @@
   margin: 0px auto;
   padding: 20px;
   border-radius: 8px;
-
   font-family: "Poppins", sans-serif;
 }
 
@@ -20,7 +19,7 @@ td {
 th,
 td {
   text-align: left;
-  padding: 15px 10px;
+  padding: 18px 10px;
 }
 
 th {

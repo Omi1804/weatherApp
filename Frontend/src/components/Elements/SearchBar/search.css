@@ -1,4 +1,4 @@
-.seachBar {
+.searchBar {
   border: 0.1px solid #ddd;
   width: 65%;
   display: flex;
@@ -8,6 +8,7 @@
   padding: 0.8rem;
   background-color: white;
   border-radius: 5px;
+  position: relative;
 
   .searchIcon {
     font-size: 1.8rem;
@@ -30,6 +31,7 @@
       font-weight: 300;
     }
   }
+
   .button {
     border: none;
     cursor: pointer;
@@ -47,7 +49,7 @@
   }
 }
 
-.seachBar.otherPage {
+.searchBar.otherPage {
   padding: 0.5rem;
   width: 60%;
   height: 2.2rem;
@@ -67,10 +69,59 @@
     font-size: 1rem;
     padding: 0.2rem 0.8rem;
   }
+
+  .currentLocation {
+    display: none;
+  }
+}
+.currentLocation {
+  /* Updated styles for more attractiveness */
+  position: absolute;
+  left: 0;
+  top: 100%; /* Position it right above searchBar */
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); /* More immersive background */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  cursor: pointer;
+  > span {
+    font-size: 1.3rem;
+    color: #ef5513;
+  }
+  > p {
+    font-size: 1rem;
+    margin-left: 0.7rem;
+    font-weight: 400;
+  }
+
+  &:hover {
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.7); /* More immersive background */
+  }
+}
+
+.searchBar:hover .currentLocation {
+  opacity: 1;
+  visibility: visible; /* Show on hover */
+}
+
+.searchBar:focus-within .currentLocation {
+  opacity: 1;
+  visibility: visible; /* Also show when searchBar or its children are focused */
 }
 
 @media screen and (max-width: 500px) {
-  .seachBar {
+  .searchBar {
     width: 100%;
     padding: 0.4rem;
     height: 2.3rem;
@@ -93,8 +144,17 @@
       padding: 0.3rem 0.8rem;
       font-size: 0.9rem;
     }
+    .currentLocation {
+      padding: 0.3rem 0.8rem;
+      > span {
+        font-size: 1.1rem;
+      }
+      > p {
+        font-size: 0.7rem;
+      }
+    }
   }
-  .seachBar.otherPage {
+  .searchBar.otherPage {
     padding: 0.2rem;
     height: 1.5rem;
     width: 70%;

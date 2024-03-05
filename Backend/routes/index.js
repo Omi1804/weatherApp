@@ -36,7 +36,7 @@ router.get("/forecast/:city", async (req, res) => {
 
 router.get("/coordinates", async (req, res) => {
   const { lat, lon } = req.query;
-  console.log(req.query);
+
   try {
     const resp = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=94749519e1ef7e1c176399f75ffb04c3`

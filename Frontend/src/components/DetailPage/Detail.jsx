@@ -21,8 +21,13 @@ const Detail = () => {
 
   const getWeatherInfo = async () => {
     try {
-      // let url = `https://api.openweathermap.org/data/2.5/weather?q=${params.city}&units=metric&appid=${API_KEY}`;
-      let url = `${BASE_URL}/city/${params.city}`;
+      const city = params.city;
+      let url;
+      if (city.includes("lat")) {
+        url = `${BASE_URL}/coordinates?${params.city}`;
+      } else {
+        url = `${BASE_URL}/city/${params.city}`;
+      }
       let res = await fetch(url);
       let data = await res.json();
       if (data.message === "city not found") {
@@ -75,7 +80,8 @@ const Detail = () => {
         sunset: timeStr,
       };
       setLoading(false);
-      dispatch(addSearch(params.city));
+      // dispatch(addSearch(params.city));
+      dispatch(addSearch(myNewWeatherInfo.name));
       setTempInfo(myNewWeatherInfo);
     } catch (error) {
       console.log(error);
@@ -211,8 +217,7 @@ const Detail = () => {
                 </div>
                 <div className="forecast">
                   <p>5 Days Forecast</p>
-
-                  <Forecast city={params.city} />
+                  <Forecast city={tempInfo.name} />
                 </div>
               </div>
             </div>
