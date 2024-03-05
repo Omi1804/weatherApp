@@ -1,6 +1,3 @@
-Sure, here's a markdown (.md) format content for your README file. You can create a new file named `README.md` in your project root and paste the following content into it:
-
-````markdown
 # Weather Application
 
 Welcome to the Weather Application! This application allows users to fetch the weather forecast for any location they choose. The project is split into two main parts: the backend, which handles API requests to fetch weather data, and the frontend, which provides a user-friendly interface for interacting with the weather data.
@@ -24,7 +21,6 @@ The backend server handles requests to the weather API and serves the fetched da
    ```sh
    cd Backend
    ```
-````
 
 2. **Install Dependencies**
 
@@ -85,8 +81,3 @@ If you're interested in contributing to the Weather Application, please read thr
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-```
-
-Replace `path/to/backend` and `path/to/frontend` with the actual paths to your project's backend and frontend directories. Adjust any steps or commands as necessary based on your project's configuration and requirements.
-```
